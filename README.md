@@ -19,7 +19,7 @@ colorizing output.
     func main() {
         err := DoSomething()
         if err != nil {
-            ansi.Printf("error: %R{%s}", err)
+            ansi.Printf("error: @R{%s}", err)
         }
     }
 
@@ -32,21 +32,21 @@ Formatting Codes
 
 The colorizing formatting codes all look like this:
 
-    % <color> { <text> }
+    @ <color> { <text> }
 
 ![Colors in the Shell](https://raw.githubusercontent.com/jhunt/ansi/master/docs/colors.png)
 
 (for the image-averse and search engines:)
 
 ```
-  %k is Black         %K is Black (bold)
-  %r is Red           %R is Red (bold)
-  %g is Green         %G is Green (bold)
-  %y is Yellow        %Y is Yellow (bold)
-  %b is Blue          %B is Blue (bold)
-  %m is Magenta       %M is Magenta (bold)
-  %c is Cyan          %C is Cyan (bold)
-  %w is White         %W is White (bold)
+  @k is Black         @K is Black (bold)
+  @r is Red           @R is Red (bold)
+  @g is Green         @G is Green (bold)
+  @y is Yellow        @Y is Yellow (bold)
+  @b is Blue          @B is Blue (bold)
+  @m is Magenta       @M is Magenta (bold)
+  @c is Cyan          @C is Cyan (bold)
+  @w is White         @W is White (bold)
 ```
 
 Contributing

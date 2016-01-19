@@ -38,7 +38,7 @@ var (
 		"W": "01;37", // white (BOLD)
 	}
 
-	re = regexp.MustCompile(`%[kKrRgGyYbBmMpPcCwW]{.*?}`)
+	re = regexp.MustCompile(`@[kKrRgGyYbBmMpPcCwW]{.*?}`)
 )
 
 var colorable = isatty.IsTerminal(os.Stdout.Fd())
