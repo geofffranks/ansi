@@ -3,7 +3,10 @@ package ansi
 import (
 	"fmt"
 	"io"
+	"os"
 	"regexp"
+
+	"github.com/mattn/go-isatty"
 )
 
 var (
@@ -38,8 +41,13 @@ var (
 	re = regexp.MustCompile(`%[kKrRgGyYbBmMpPcCwW]{.*?}`)
 )
 
+var colorable = isatty.IsTerminal(os.Stdout.Fd())
+
 func colorize(s string) string {
 	return re.ReplaceAllStringFunc(s, func (m string) string {
+		if !colorable {
+			return m[3:len(m)-1]
+		}
 		return "\033[" + colors[m[1:2]] + "m" + m[3:len(m)-1] + "\033[00m"
 	})
 }
