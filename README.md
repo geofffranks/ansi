@@ -49,6 +49,9 @@ The colorizing formatting codes all look like this:
   @w is White         @W is White (bold)
 ```
 
+You can now also activate super-awesome RAINBOW mode with
+`@*{...}`
+
 Contributing
 ------------
 

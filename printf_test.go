@@ -38,6 +38,8 @@ func TestColorizer(t *testing.T) {
 		{"@k{black} and @r{red}", "\033[00;30mblack\033[00m and \033[00;31mred\033[00m"},
 		{"error: @R{%s}", "error: \033[01;31m%s\033[00m"},
 
+		{"@*{RAINBOW}", "\033[01;31mR\033[00m\033[01;33mA\033[00m\033[01;32mI\033[00m\033[01;36mN\033[00m\033[01;34mB\033[0m\033[01;37mO\033[00m\033[01;31mW\033[00m"},
+
 		{"@s@d@l@f", "@s@d@l@f"},
 		{"host error: %s", "host error: %s"},
 	}

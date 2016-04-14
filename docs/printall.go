@@ -3,7 +3,7 @@ package main
 import "github.com/jhunt/ansi"
 
 func main() {
-	ansi.Printf("\n\n\n  @R{A}@G{N}@Y{S}@B{I} Color Codes\n\n\n")
+	ansi.Printf("\n\n\n  @*{TASTE THE (ANSI) RAINBOW}\n\n\n")
 	var colors = []struct {
 		Regular string
 		Bold string

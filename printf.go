@@ -38,7 +38,7 @@ var (
 		"W": "01;37", // white (BOLD)
 	}
 
-	re = regexp.MustCompile(`@[kKrRgGyYbBmMpPcCwW]{.*?}`)
+	re = regexp.MustCompile(`@[kKrRgGyYbBmMpPcCwW*]{.*?}`)
 )
 
 var colorable = isatty.IsTerminal(os.Stdout.Fd())
@@ -47,6 +47,15 @@ func colorize(s string) string {
 	return re.ReplaceAllStringFunc(s, func (m string) string {
 		if !colorable {
 			return m[3:len(m)-1]
+		}
+		if m[1:2] == "*" {
+			rainbow := "RYGCBM"
+			s := "";
+			for i, c := range m[3:len(m)-1] {
+				j := i%len(rainbow)
+				s += "\033[" + colors[ rainbow[j:j+1] ] + "m" + string(c) + "\033[00m"
+			}
+			return s
 		}
 		return "\033[" + colors[m[1:2]] + "m" + m[3:len(m)-1] + "\033[00m"
 	})
