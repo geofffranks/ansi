@@ -6,7 +6,7 @@ import (
 
 func TestColorizer(t *testing.T) {
 	var tests = []struct {
-		In string
+		In  string
 		Out string
 	}{
 		{"@k{color}", "\033[00;30mcolor\033[00m"},

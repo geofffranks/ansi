@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	colors = map[string] string {
+	colors = map[string]string{
 		"k": "00;30", // black
 		"K": "01;30", // black (BOLD)
 
@@ -44,16 +44,16 @@ var (
 var colorable = isatty.IsTerminal(os.Stdout.Fd())
 
 func colorize(s string) string {
-	return re.ReplaceAllStringFunc(s, func (m string) string {
+	return re.ReplaceAllStringFunc(s, func(m string) string {
 		if !colorable {
-			return m[3:len(m)-1]
+			return m[3 : len(m)-1]
 		}
 		if m[1:2] == "*" {
 			rainbow := "RYGCBM"
-			s := "";
-			for i, c := range m[3:len(m)-1] {
-				j := i%len(rainbow)
-				s += "\033[" + colors[ rainbow[j:j+1] ] + "m" + string(c) + "\033[00m"
+			s := ""
+			for i, c := range m[3 : len(m)-1] {
+				j := i % len(rainbow)
+				s += "\033[" + colors[rainbow[j:j+1]] + "m" + string(c) + "\033[00m"
 			}
 			return s
 		}
