@@ -43,6 +43,10 @@ var (
 
 var colorable = isatty.IsTerminal(os.Stdout.Fd())
 
+func Color(c bool) {
+	colorable = c
+}
+
 func colorize(s string) string {
 	return re.ReplaceAllStringFunc(s, func(m string) string {
 		if !colorable {
