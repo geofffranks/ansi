@@ -23,9 +23,9 @@ colorizing output.
         }
     }
 
-`ansi.Fprintf` and `ansi.Sprintf` behave similarly, exporting the
-exact same call signature as their `fmt` bretheren, but handling
-the ANSI color sequences for you.
+`ansi.Fprintf`, `ansi.Sprintf` and `ansi.Errorf` behave similarly,
+exporting the exact same call signature as their `fmt` bretheren, but
+handling the ANSI color sequences for you.
 
 Formatting Codes
 ----------------

@@ -76,3 +76,7 @@ func Fprintf(out io.Writer, format string, a ...interface{}) (int, error) {
 func Sprintf(format string, a ...interface{}) string {
 	return fmt.Sprintf(colorize(format), a...)
 }
+
+func Errorf(format string, a ...interface{}) error {
+	return fmt.Errorf(colorize(format), a...)
+}
